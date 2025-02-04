@@ -14,20 +14,18 @@
     .main-image {
       animation: zoomInOut 8s ease-in-out infinite;
     }
-    /* Order Button: Combined movement & pulse animation */
-    @keyframes movePulse {
-      0% { top: 80%; left: 80%; transform: scale(1); }
-      25% { top: 20%; left: 70%; transform: scale(1.1); }
-      50% { top: 30%; left: 10%; transform: scale(1); }
-      75% { top: 70%; left: 20%; transform: scale(1.1); }
-      100% { top: 80%; left: 80%; transform: scale(1); }
+    /* New keyframes for Order Button: Move horizontally only */
+    @keyframes sideMove {
+      0% { left: 5%; }
+      50% { left: 90%; }
+      100% { left: 5%; }
     }
     .fixed-order-btn {
       position: fixed;
       top: 80%;
-      left: 80%;
+      left: 5%;
       z-index: 100;
-      animation: movePulse 15s ease-in-out infinite;
+      animation: sideMove 20s ease-in-out infinite;
       background-color: #f97316;
       color: white;
       padding: 1rem 1.5rem;
@@ -35,6 +33,7 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       font-weight: bold;
       text-decoration: none;
+      transition: opacity 0.3s ease;
     }
   </style>
 </head>
@@ -195,7 +194,7 @@
     </div>
   </section>
 
-  <!-- Floating Order Button with Movement & Pulse -->
+  <!-- Floating Order Button (moves slowly along sides) -->
   <a href="#order" class="fixed-order-btn">أطلب الآن</a>
 
   <script>
@@ -292,6 +291,13 @@
     });
     imageModal.addEventListener('click', () => {
       imageModal.classList.add('hidden');
+    });
+
+    // ------------------------------
+    // Hide Floating Order Button on Click
+    // ------------------------------
+    document.querySelector('.fixed-order-btn').addEventListener('click', function() {
+      this.style.display = 'none';
     });
   </script>
 </body>
