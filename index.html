@@ -45,16 +45,17 @@
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="md:col-span-2">
-          <!-- Changed h-96 to h-64 on mobile and h-96 on md for a better mobile view -->
           <img src="https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/37/356156/1.jpg?9607" 
-               class="main-image w-full h-64 md:h-96 object-cover rounded-xl shadow-lg cursor-pointer" alt="Main Product Image">
+               class="main-image w-full h-64 md:h-96 object-cover rounded-xl shadow-lg cursor-pointer" 
+               alt="Main Product Image">
         </div>
         <div class="grid grid-cols-2 gap-4">
-          <!-- Secondary images reduced on mobile -->
           <img src="https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/37/356156/2.jpg?9607" 
-               class="w-full h-32 md:h-48 object-cover rounded-xl shadow-lg transition duration-300 hover:brightness-110 cursor-pointer" alt="Product Image 2">
+               class="w-full h-32 md:h-48 object-cover rounded-xl shadow-lg transition duration-300 hover:brightness-110 cursor-pointer" 
+               alt="Product Image 2">
           <img src="https://ma.jumia.is/cms/external/pet/GE232FF0M8O70NAFAMZ/61630a6442cf458ad7a51cad2dfa4ef7.jpg" 
-               class="w-full h-32 md:h-48 object-cover rounded-xl shadow-lg transition duration-300 hover:brightness-110 cursor-pointer" alt="Product Image 3">
+               class="w-full h-32 md:h-48 object-cover rounded-xl shadow-lg transition duration-300 hover:brightness-110 cursor-pointer" 
+               alt="Product Image 3">
         </div>
       </div>
     </div>
@@ -196,7 +197,7 @@
 
   <script>
     // ------------------------------
-    // 1. Testimonials Carousel Fix
+    // Testimonials Carousel Fix
     // ------------------------------
     const testimonials = [
       {
@@ -222,14 +223,15 @@
     ];
 
     let currentIndex = 0;
+
     function generateTestimonials() {
       const carousel = document.getElementById('testimonialCarousel');
       const dotsContainer = document.getElementById('carouselDots');
       
       testimonials.forEach((testimonial, index) => {
-        // Create testimonial card
+        // Create testimonial card with full width and no shrink
         const card = document.createElement('div');
-        card.className = 'min-w-full p-6';
+        card.className = 'w-full flex-shrink-0 p-6';
         card.innerHTML = `
           <div class="bg-white p-6 rounded-xl shadow-lg testimonial-card">
             <div class="flex items-center mb-4">
@@ -253,17 +255,13 @@
         dot.onclick = () => showTestimonial(index);
         dotsContainer.appendChild(dot);
       });
-      // Set carousel container width based on number of testimonials
-      carousel.style.width = `${testimonials.length * 100}%`;
     }
 
     function showTestimonial(index) {
       const carousel = document.getElementById('testimonialCarousel');
       const dots = document.querySelectorAll('.carousel-dot');
-      
       currentIndex = index;
-      carousel.style.transform = `translateX(-${index * (100 / testimonials.length)}%)`;
-      
+      carousel.style.transform = `translateX(-${index * 100}%)`;
       dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === index);
       });
@@ -274,8 +272,10 @@
       showTestimonial(currentIndex);
     }, 5000);
 
+    generateTestimonials();
+
     // ------------------------------
-    // 2. Order Form Submission & UX
+    // Order Form Submission & UX
     // ------------------------------
     document.getElementById('orderForm').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -283,18 +283,18 @@
       const formData = new FormData(this);
       const messageDiv = document.getElementById('formMessage');
       
-      // Simulate submission
+      // Simulate form submission
       messageDiv.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700');
       messageDiv.classList.add('bg-green-100', 'text-green-700');
       messageDiv.innerHTML = `
-        ✅ تم تأكيد طلبك بنجاح!<br>
-        <span class="text-sm">سنتصل بك على الواتساب خلال دقائق</span>
+        ✅ Your order has been successfully confirmed!<br>
+        <span class="text-sm">We will contact you on WhatsApp in a few minutes.</span>
       `;
       messageDiv.classList.remove('hidden');
       
       this.reset();
       
-      // Update counter
+      // Update the counter
       const counter = document.getElementById('counter');
       counter.textContent = parseInt(counter.textContent) - 1;
       
@@ -304,11 +304,10 @@
     });
 
     // ------------------------------
-    // 3. Image Modal Functionality
+    // Image Modal Functionality
     // ------------------------------
     const imageModal = document.getElementById('imageModal');
     const modalImage = document.getElementById('modalImage');
-    // Only select images within the gallery
     document.querySelectorAll('#gallery img').forEach(img => {
       img.addEventListener('click', () => {
         modalImage.src = img.src;
@@ -318,9 +317,6 @@
     imageModal.addEventListener('click', () => {
       imageModal.classList.add('hidden');
     });
-
-    // Initialize testimonials
-    generateTestimonials();
   </script>
 </body>
 </html>
