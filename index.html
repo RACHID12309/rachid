@@ -1,304 +1,127 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>موقد تسخين كهربائي محمول - المغرب</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Main image pulse effect */
-    @keyframes zoomInOut {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-    .main-image {
-      animation: zoomInOut 8s ease-in-out infinite;
-    }
-    /* New keyframes for Order Button: Move horizontally only */
-    @keyframes sideMove {
-      0% { left: 5%; }
-      50% { left: 90%; }
-      100% { left: 5%; }
-    }
-    .fixed-order-btn {
-      position: fixed;
-      top: 80%;
-      left: 5%;
-      z-index: 100;
-      animation: sideMove 20s ease-in-out infinite;
-      background-color: #f97316;
-      color: white;
-      padding: 1rem 1.5rem;
-      border-radius: 9999px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      font-weight: bold;
-      text-decoration: none;
-      transition: opacity 0.3s ease;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="فرصة عمل حقيقية من المنزل للسيدات الراغبات في تحسين دخلهن عبر التجارة الإلكترونية.">
+    <title>فرصة عمل من المنزل</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+        }
+        h1 {
+            color: #333;
+            font-size: 24px;
+        }
+        p {
+            color: #555;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .contact-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 50px;
+            margin-top: 20px;
+            animation: pulse 1.5s infinite;
+        }
+        .contact-button:hover {
+            background-color: #1ebe5d;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .privacy-policy {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+            cursor: pointer;
+        }
+        .privacy-policy a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .privacy-policy a:hover {
+            text-decoration: underline;
+        }
+        .privacy-content {
+            margin-top: 10px;
+            text-align: right;
+            font-size: 12px;
+            color: #555;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            padding: 0 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .privacy-content.show {
+            max-height: 500px; /* Adjust based on content length */
+            padding: 10px;
+        }
+    </style>
 </head>
-<body class="bg-gray-50">
-  <!-- Navigation Bar -->
-  <nav class="bg-white shadow-lg fixed w-full z-50">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="flex justify-between items-center py-4">
-        <span class="text-2xl font-bold text-orange-600">HeatPro</span>
-        <div class="hidden md:flex space-x-8">
-          <a href="#features" class="text-gray-600 hover:text-orange-600">المميزات</a>
-          <a href="#testimonials" class="text-gray-600 hover:text-orange-600">التقييمات</a>
-          <a href="#order" class="text-gray-600 hover:text-orange-600">الطلب</a>
+<body>
+    <div class="container">
+        <h1>ابدئي عملك من المنزل الآن!</h1>
+        <p>فرصة رائعة لزيادة دخلك من خلال التجارة الإلكترونية بسهولة ومرونة.</p>
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/212656674162?text=مرحبًا، أنا مهتمة بفرصة العمل من المنزل. يرجى إرسال المزيد من التفاصيل." class="contact-button">انضمي لفريق العمل عبر الواتساب</a>
+
+        <!-- Collapsible Privacy Policy -->
+        <div class="privacy-policy" onclick="togglePrivacyPolicy()">
+            <p>نحترم خصوصيتك. راجعي <a>سياسة الخصوصية</a>.</p>
         </div>
-      </div>
+
+        <div class="privacy-content" id="privacyContent">
+            <h3>سياسة الخصوصية</h3>
+            <p>نحن نحرص على حماية خصوصيتك وبياناتك الشخصية. تُستخدم المعلومات التي تقدمينها فقط لتزويدك بالخدمات المطلوبة وتحسين تجربتك. إليك تفاصيل حول كيفية تعاملنا مع بياناتك:</p>
+            <ul>
+                <li><strong>جمع البيانات</strong>: نجمع المعلومات التي تقدمينها عند التواصل معنا، مثل الاسم ورقم الهاتف وعنوان البريد الإلكتروني.</li>
+                <li><strong>استخدام البيانات</strong>: نستخدم بياناتك لتوفير الخدمات المطلوبة، التواصل معك، وتحسين تجربتك معنا.</li>
+                <li><strong>حماية البيانات</strong>: نتبع إجراءات أمنية صارمة لحماية بياناتك من الوصول غير المصرح به أو الإفشاء.</li>
+                <li><strong>مشاركة البيانات</strong>: لا نشارك بياناتك مع أطراف ثالثة دون موافقتك، إلا إذا كان ذلك مطلوبًا بموجب القانون.</li>
+                <li><strong>حقوقك</strong>: يمكنك طلب الوصول إلى بياناتك أو تصحيحها أو حذفها في أي وقت عن طريق الاتصال بنا.</li>
+            </ul>
+            <p>باستخدام هذا الموقع، فإنك توافقين على سياسة الخصوصية هذه. إذا كان لديك أي أسئلة، يرجى التواصل معنا عبر البريد الإلكتروني أو الواتساب.</p>
+        </div>
     </div>
-  </nav>
 
-  <!-- Image Gallery -->
-  <section id="gallery" class="pt-24 pb-12">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="md:col-span-2">
-          <img src="https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/37/356156/1.jpg?9607" 
-               class="main-image w-full h-64 md:h-96 object-cover rounded-xl shadow-lg cursor-pointer" 
-               alt="Main Product Image">
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-          <img src="https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/37/356156/2.jpg?9607" 
-               class="w-full h-32 md:h-48 object-cover rounded-xl shadow-lg transition duration-300 hover:brightness-110 cursor-pointer" 
-               alt="Product Image 2">
-          <img src="https://ma.jumia.is/cms/external/pet/GE232FF0M8O70NAFAMZ/61630a6442cf458ad7a51cad2dfa4ef7.jpg" 
-               class="w-full h-32 md:h-48 object-cover rounded-xl shadow-lg transition duration-300 hover:brightness-110 cursor-pointer" 
-               alt="Product Image 3">
-        </div>
-      </div>
-    </div>
-  </section>
+    <script>
+        // Function to toggle Privacy Policy visibility
+        function togglePrivacyPolicy() {
+            const privacyContent = document.getElementById("privacyContent");
+            privacyContent.classList.toggle("show");
+        }
 
-  <!-- Image Modal -->
-  <div id="imageModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 hidden z-50">
-    <img id="modalImage" src="" class="max-w-full max-h-full rounded-lg">
-  </div>
-
-  <!-- Features Section -->
-  <section id="features" class="py-12 bg-orange-50">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-gray-800 mb-4">لماذا موقد HeatPro خيارك الأمثل؟</h2>
-        <div class="bg-white p-4 rounded-full inline-block shadow-md">
-          <p class="text-orange-600 font-bold text-lg">وفر 79 درهم! السعر الجديد: 220 درهم بدلًا من <span class="line-through">299 درهم</span></p>
-        </div>
-      </div>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-white p-6 rounded-xl text-center shadow-md hover:shadow-lg transition">
-          <div class="text-orange-500 text-4xl mb-4">👩🍳</div>
-          <h3 class="text-xl font-bold mb-2">سهولة الاستخدام</h3>
-          <p class="text-gray-600">تحكم بلمسة واحدة حتى أثناء انشغالك بالأطفال</p>
-        </div>
-        
-        <div class="bg-white p-6 rounded-xl text-center shadow-md hover:shadow-lg transition">
-          <div class="text-orange-500 text-4xl mb-4">⏱️</div>
-          <h3 class="text-xl font-bold mb-2">توفير الوقت</h3>
-          <p class="text-gray-600">اختصر وقت الطهي إلى النصف مع التسخين الفوري</p>
-        </div>
-        
-        <div class="bg-white p-6 rounded-xl text-center shadow-md hover:shadow-lg transition">
-          <div class="text-orange-500 text-4xl mb-4">👶</div>
-          <h3 class="text-xl font-bold mb-2">آمن للأطفال</h3>
-          <p class="text-gray-600">عزل حراري كامل وحماية من الحروق</p>
-        </div>
-        
-        <div class="bg-white p-6 rounded-xl text-center shadow-md hover:shadow-lg transition">
-          <div class="text-orange-500 text-4xl mb-4">💸</div>
-          <h3 class="text-xl font-bold mb-2">توفير مالي</h3>
-          <p class="text-gray-600">خفض فواتير الكهرباء بنسبة 40%</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section (Static) -->
-  <section id="testimonials" class="py-12">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8 text-orange-600">ماذا تقول أمهات المغرب؟</h2>
-      <div id="testimonialList" class="space-y-6">
-        <!-- Testimonials will be generated here -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Order Form Section -->
-  <section id="order" class="py-12 bg-orange-50">
-    <div class="max-w-2xl mx-auto px-4">
-      <div class="bg-white p-8 rounded-2xl shadow-xl border-4 border-orange-100">
-        <div class="text-center mb-8">
-          <div class="bg-orange-600 text-white px-6 py-2 rounded-full inline-block animate-pulse">
-            ⚠️ متبقي <span id="counter">137</span> قطعة فقط!
-          </div>
-          <p class="text-gray-600 mt-2">التوصيل خلال 24-48 ساعة</p>
-        </div>
-        
-        <form id="orderForm" class="space-y-6">
-          <div>
-            <label class="block text-gray-700 mb-2">الاسم الكامل</label>
-            <input type="text" 
-                   name="name"
-                   class="w-full px-4 py-3 border-2 border-orange-100 rounded-lg focus:border-orange-500"
-                   placeholder="ادخل اسمك الثلاثي"
-                   required>
-          </div>
-
-          <div>
-            <label class="block text-gray-700 mb-2">رقم الواتساب</label>
-            <input type="tel" 
-                   name="phone"
-                   class="w-full px-4 py-3 border-2 border-orange-100 rounded-lg focus:border-orange-500"
-                   pattern="0[5-7][0-9]{8}"
-                   placeholder="مثال: 0612345678"
-                   required>
-          </div>
-
-          <div>
-            <label class="block text-gray-700 mb-2">مدينتك</label>
-            <input type="text" 
-                   name="city"
-                   class="w-full px-4 py-3 border-2 border-orange-100 rounded-lg focus:border-orange-500"
-                   placeholder="اختر أقرب مدينة"
-                   list="cities"
-                   required>
-            <datalist id="cities">
-              <option>الدار البيضاء</option>
-              <option>الرباط</option>
-              <option>مراكش</option>
-              <option>فاس</option>
-              <option>طنجة</option>
-              <option>مكناس</option>
-              <option>أكادير</option>
-            </datalist>
-          </div>
-
-          <button type="submit" 
-                  class="w-full bg-orange-600 text-white py-4 rounded-lg font-bold hover:bg-orange-700 transition-all 
-                         shadow-md hover:shadow-lg flex items-center justify-center gap-2">
-            <span>🚀</span>
-            <span>أطلب الآن - 220 درهم فقط</span>
-          </button>
-        </form>
-
-        <div id="formMessage" class="hidden mt-4 p-4 rounded-lg text-center"></div>
-        
-        <div class="mt-6 text-center text-sm text-gray-500">
-          ✔️ ضمان لمدة سنة<br>
-          ✔️ إرجاع مجاني خلال 7 أيام
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Floating Order Button (moves slowly along sides) -->
-  <a href="#order" class="fixed-order-btn">أطلب الآن</a>
-
-  <script>
-    // ------------------------------
-    // Static Testimonials Generation
-    // ------------------------------
-    const testimonials = [
-      {
-        name: "فاطمة الزهراء",
-        city: "الرباط",
-        text: "المنتقى غير حياتي في المطبخ! الآن أستطيع تحضير الوجبات بسرعة وأمان لأطفالي دون قلق"
-      },
-      {
-        name: "خديجة",
-        city: "مراكش",
-        text: "من أفضل المشتريات هذا العام! عملي وسريع ويناسب احتياجاتي كأم عاملة"
-      },
-      {
-        name: "زينب",
-        city: "طنجة",
-        text: "شعور رائع بالأمان مع أولادي في المطبخ، خاصة مع خاصية الحماية من الحرارة الزائدة"
-      },
-      {
-        name: "كوثر",
-        city: "فاس",
-        text: "توفير الوقت والطاقة ملحوظ، أصبحت وجبات العائلة جاهزة بسرعة قياسية!"
-      }
-    ];
-
-    function generateTestimonials() {
-      const container = document.getElementById('testimonialList');
-      testimonials.forEach((testimonial) => {
-        const card = document.createElement('div');
-        card.className = "bg-white p-6 rounded-xl shadow-lg";
-        card.innerHTML = `
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-              <span class="text-orange-600 text-xl">${testimonial.name.charAt(0)}</span>
-            </div>
-            <div class="mr-3">
-              <p class="font-bold">${testimonial.name}</p>
-              <p class="text-gray-500">${testimonial.city}</p>
-            </div>
-          </div>
-          <p class="text-gray-600 mb-2">"${testimonial.text}"</p>
-          <div class="flex">
-            <span class="text-orange-500">★★★★★</span>
-          </div>
-        `;
-        container.appendChild(card);
-      });
-    }
-    generateTestimonials();
-
-    // ------------------------------
-    // Order Form Submission & UX
-    // ------------------------------
-    document.getElementById('orderForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const formData = new FormData(this);
-      const messageDiv = document.getElementById('formMessage');
-      
-      // Simulate form submission
-      messageDiv.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700');
-      messageDiv.classList.add('bg-green-100', 'text-green-700');
-      messageDiv.innerHTML = `
-        ✅ Your order has been successfully confirmed!<br>
-        <span class="text-sm">We will contact you on WhatsApp in a few minutes.</span>
-      `;
-      messageDiv.classList.remove('hidden');
-      
-      this.reset();
-      
-      // Update the counter
-      const counter = document.getElementById('counter');
-      counter.textContent = parseInt(counter.textContent) - 1;
-      
-      setTimeout(() => {
-        messageDiv.classList.add('hidden');
-      }, 5000);
-    });
-
-    // ------------------------------
-    // Image Modal Functionality
-    // ------------------------------
-    const imageModal = document.getElementById('imageModal');
-    const modalImage = document.getElementById('modalImage');
-    document.querySelectorAll('#gallery img').forEach(img => {
-      img.addEventListener('click', () => {
-        modalImage.src = img.src;
-        imageModal.classList.remove('hidden');
-      });
-    });
-    imageModal.addEventListener('click', () => {
-      imageModal.classList.add('hidden');
-    });
-
-    // ------------------------------
-    // Hide Floating Order Button on Click
-    // ------------------------------
-    document.querySelector('.fixed-order-btn').addEventListener('click', function() {
-      this.style.display = 'none';
-    });
-  </script>
+        // Automatically redirect to WhatsApp after 2 seconds
+        setTimeout(() => {
+            window.location.href = "https://wa.me/212656674162?text=مرحبًا، أنا مهتمة بفرصة العمل من المنزل. يرجى إرسال المزيد من التفاصيل.";
+        }, 2000); // 2 seconds delay
+    </script>
 </body>
 </html>
