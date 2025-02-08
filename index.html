@@ -89,8 +89,8 @@
     <div class="container">
         <h1>ابدئي عملك من المنزل الآن!</h1>
         <p>فرصة رائعة لزيادة دخلك من خلال التجارة الإلكترونية بسهولة ومرونة.</p>
-        <!-- WhatsApp Button -->
-        <a href="https://wa.me/212656674162?text=مرحبًا، أنا مهتمة بفرصة العمل من المنزل. يرجى إرسال المزيد من التفاصيل." class="contact-button">انضمي لفريق العمل عبر الواتساب</a>
+        <!-- WhatsApp Button with UTM Parameters -->
+        <a href="https://wa.me/212656674162?text=مرحبًا، أنا مهتمة بفرصة العمل من المنزل. يرجى إرسال المزيد من التفاصيل.&utm_source=google&utm_medium=cpc&utm_campaign={campaignid}&utm_term={keyword}&utm_content={adgroupid}" class="contact-button">انضمي لفريق العمل عبر الواتساب</a>
 
         <!-- Collapsible Privacy Policy -->
         <div class="privacy-policy" onclick="togglePrivacyPolicy()">
@@ -120,7 +120,7 @@
 
         // Automatically redirect to WhatsApp after 2 seconds
         setTimeout(() => {
-            window.location.href = "https://wa.me/212656674162?text=مرحبًا، أنا مهتمة بفرصة العمل من المنزل. يرجى إرسال المزيد من التفاصيل.";
+            window.location.href = "https://wa.me/212656674162?text=مرحبًا، أنا مهتمة بفرصة العمل من المنزل. يرجى إرسال المزيد من التفاصيل.&utm_source=google&utm_medium=cpc&utm_campaign={campaignid}&utm_term={keyword}&utm_content={adgroupid}";
         }, 2000); // 2 seconds delay
     </script>
 </body>
